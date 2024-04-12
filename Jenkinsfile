@@ -1,9 +1,11 @@
 pipeline {
     agent any
+    
+    tools { nodejs "nodejs" }
+    
     stages {
         stage('Build') { 
             steps {
-                sudo apt install npm
                 sh 'npm install' 
             }
         }

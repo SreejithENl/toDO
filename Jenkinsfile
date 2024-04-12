@@ -1,11 +1,11 @@
 pipeline {
     agent any
+    
     stages {
-        stage('Build') { 
+        stage('Check Version') { 
             steps {
-                nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
-                    sh 'npm config ls'
-                }
+                sh "node --version"
+                sh "npm --version"
             }
         }
     }
